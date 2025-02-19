@@ -1,0 +1,120 @@
+/* === Global Body Styles === */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'SF Pro Display', Arial, sans-serif;
+  background: #121212; /* Dark background for dark mode */
+}
+
+/* === Calculator Container === */
+.calculator {
+  width: 330px; /* iPhone 13's width (adjusted for aspect ratio) */
+  padding: 15px;
+  background: #1e1e1e; /* Dark background for the calculator */
+  border-radius: 50px; /* Rounded corners to match iPhone's rounded edges */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid #333; /* Darker border for dark mode */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Subtle shadow for elegance */
+  height: 550px; /* Adjusted height to fit within screen space */
+}
+
+/* === Display Screen === */
+.display {
+  width: 100%;
+  height: 100px; /* Adjusted to be closer to iPhone's calculator screen */
+  font-size: 3em; /* Slightly adjusted font size */
+  color: #f5f5f5; /* Light text color for dark mode */
+  text-align: right;
+  padding: 15px;
+  background: #2a2a2a; /* Dark gray background for the display */
+  border-radius: 20px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 600; /* Slightly bolder font for clarity */
+}
+
+/* === Keypad Layout === */
+.calculator__keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px; /* Adjusted for iPhone's proportions */
+}
+
+/* === Button Styling === */
+button {
+  width: 75px; /* Adjusted button width to better fit iPhone layout */
+  height: 75px;
+  font-size: 2.2em;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.1s;
+  background: #3a3a3a; /* Dark button background */
+  color: #f5f5f5; /* Light text for better visibility */
+}
+
+button:active {
+  transform: scale(0.95); /* Subtle scale for realism */
+}
+
+/* === Number Buttons (Light Gray) === */
+button:not(.operator, .equals, .clear) {
+  background: #444; /* Darker gray for number buttons */
+  color: #f5f5f5;
+}
+button:not(.operator, .equals, .clear):hover {
+  background: #555; /* Darker hover effect */
+}
+
+/* === Operator Buttons (Orange) === */
+.operator {
+  background: #ff9500;
+  color: white;
+}
+.operator:hover {
+  background: #e68900;
+}
+
+/* === Clear and Delete Buttons (Light Gray) === */
+.clear {
+  background: #707070;
+  color: black;
+}
+.clear:hover {
+  background: #595959;
+}
+
+/* === Equals Button (Orange) === */
+.equals {
+  background: #ff9500;
+  color: white;
+  grid-column: span 2;
+  border-radius: 50px;
+}
+.equals:hover {
+  background: #e68900;
+}
+
+/* === Zero Button (Wide Button) === */
+.zero {
+  grid-column: span 2;
+  width: 150px; /* Adjusted width for the zero button */
+  border-radius: 50px;
+  background: #444;
+  color: #f5f5f5;
+}
+.zero:hover {
+  background: #555;
+}
